@@ -16,10 +16,12 @@ import {
 } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { weekNavigation as weekData } from "../data/mockData";
+import { weekNavigation as weekData } from "../../data/mockData.js";
 import dynamic from "next/dynamic";
 const DonutChart = dynamic(() => import("./DonutChart"), { ssr: false });
-const TrackingChart = dynamic(() => import("./TrackingChart"), { ssr: false });
+const TrackingChart = dynamic(() => import("./TrackingChart.jsx"), {
+  ssr: false,
+});
 
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import MonitorHeartIcon from "@mui/icons-material/MonitorHeart";
@@ -314,7 +316,7 @@ const Dashboard: React.FC = () => {
               }}
             >
               {/* Left Side - Donut Chart */}
-              <Box wdth="50%">
+              <Box>
                 <Typography variant="subtitle1" fontWeight="bold">
                   Season Patterns this week
                 </Typography>
