@@ -116,7 +116,9 @@ const Dashboard: React.FC = () => {
           {canScrollLeft && (
             <IconButton onClick={() => handleScroll("left")}>
               {" "}
-              <ArrowBackIosIcon sx={{ fontSize: "28px" }} />{" "}
+              <ArrowBackIosIcon
+                sx={{ fontSize: "28px", color: "rgb(0, 0, 0)" }}
+              />{" "}
             </IconButton>
           )}
           <Box
@@ -195,7 +197,9 @@ const Dashboard: React.FC = () => {
           {canScrollRight && (
             <IconButton onClick={() => handleScroll("right")}>
               {" "}
-              <ArrowForwardIosIcon sx={{ fontSize: "28px" }} />{" "}
+              <ArrowForwardIosIcon
+                sx={{ fontSize: "28px", color: "rgb(0, 0, 0)" }}
+              />{" "}
             </IconButton>
           )}
         </Box>
@@ -316,7 +320,7 @@ const Dashboard: React.FC = () => {
               }}
             >
               {/* Left Side - Donut Chart */}
-              <Box>
+              <Box width="100%">
                 <Typography variant="subtitle1" fontWeight="bold">
                   Season Patterns this week
                 </Typography>
@@ -424,7 +428,7 @@ const Dashboard: React.FC = () => {
                 <DonutChart />
               </Box>
 
-              <Box>
+              <Box width="100%">
                 <TrackingChart />
               </Box>
             </Paper>

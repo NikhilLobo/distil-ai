@@ -68,16 +68,16 @@ const renderCustomLabel = (props: any) => {
 
 const DonutChart = () => {
   const theme = useTheme();
-  const isMdScreen = useMediaQuery(theme.breakpoints.up("md"));
+  const isMdScreen = useMediaQuery(theme.breakpoints.up("lg"));
   return (
     <Box textAlign="center" sx={{ backgroundColor: "#F5F5F5", mt: 1 }}>
-      <PieChart width={375} height={isMdScreen ? 388 : 366}>
+      <PieChart width={isMdScreen ? 650 : 375} height={isMdScreen ? 388 : 366}>
         <Pie
           data={data}
           cx="50%"
           cy="50%"
-          innerRadius={60}
-          outerRadius={100}
+          innerRadius={isMdScreen ? 85 : 60}
+          outerRadius={isMdScreen ? 150 : 100}
           dataKey="value"
           label={renderCustomLabel} // ✅ Custom label with lines
           labelLine={false} // ✅ Hide default labels
